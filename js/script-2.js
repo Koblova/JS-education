@@ -1,4 +1,4 @@
-let a;
+//let a;
 //let b = "hello";
 //console.log(b);
 
@@ -19,7 +19,7 @@ button.onclick = function (){
 //ДОМАШНЕЕ ЗАДАНИЕ
 /*a = 7;
 b = 9;
-console.log(a + b);*/
+console.log(a + b);
 
 c = 7;
 d = 9;
@@ -43,13 +43,12 @@ console.log(e2 / f3);
 
 e4 = 3;
 f4 = 'Hello';
-console.log(e4 * f4);
+console.log(e4 * f4);*/
 
 
 //выводит на страницу, что пользователь ввел в input
 let inputTwo = document.querySelector(".input-two");
 let buttonTwo = document.querySelector(".two");
-let outTwo = document.querySelector(".out-two");
 
 buttonTwo.onclick = function (){
   console.log("Сработала"); //когда по кнопке кликнули, то срабатывает функция (например, вывод в консоль)
@@ -62,7 +61,7 @@ buttonTwo.onclick = function (){
 //выполняется функция, которая выводит на страницу число, которое ввел пользователь умноженное на 10
 let inputThree = document.querySelector(".input-three");
 let buttonThree = document.querySelector(".three");
-let outThree = document.querySelector(".out-three");
+
 
 buttonThree.onclick = function (){
   let w = inputThree.value;
@@ -73,11 +72,42 @@ buttonThree.onclick = function (){
 //выполняется функция, которая выводит на страницу число, которое ввел пользователь и к нему добавленное число 10
 let inputFour = document.querySelector(".input-four");
 let buttonFour = document.querySelector(".four");
-let outFour = document.querySelector(".out-four");
 
 buttonFour.onclick = function(){
  let h = inputFour.value;
- console.log(h + "10")
+ console.log(h + "10");
+ inputFour.value = "";
 }
 
 //В первый input пользователь вводит имя, во второе фамилию. При нажатии кнопки выполняется функция, которая выводит в консоль строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия
+
+let inputFive = document.querySelector(".input-five");
+let inputSix = document.querySelector(".input-six");
+let buttonFive = document.querySelector(".five");
+
+buttonFive.onclick = function(){
+  let r = inputFive.value;
+  let t = inputSix.value;
+  console.log("hello " + r + " " + t);
+  inputFive.value = "";
+  inputSix.value = "";
+}
+
+//Создайте два input и кнопку. В input пользователь вводит числа. При нажатии кнопки выполняется функция, которая выводит сумму данных двух чисел на страницу
+
+let numberOne = document.querySelector(".number-one"); 
+let numberTwo = document.querySelector(".number-two");
+let buttonNumber = document.querySelector(".number");
+let out = document.querySelector(".out-number"); 
+
+buttonNumber.onclick = function(){
+  let one = +numberOne.value;
+  let two = +numberTwo.value;
+  console.log(one + two);
+  out.innerHTML = one;
+  out.innerHTML = two;
+}
+
+//Создайте input и пропишите ему в html value = 77. С помощью JS измените value на 'Hello'
+
+document.queryCommandValue("hello").innerHTML = "Hello World";
