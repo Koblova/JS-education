@@ -110,4 +110,75 @@ buttonNumber.onclick = function(){
 
 //Создайте input и пропишите ему в html value = 77. С помощью JS измените value на 'Hello'
 
-document.queryCommandValue("hello").innerHTML = "Hello World";
+document.querySelector('.hello').value = 'Hello';
+
+//Создайте input и получите его в переменную y. В js выполните следующее присвоение: y.style.border = '2px solid red'. Изучите результат операции
+
+let y = document.querySelector(".seven"); 
+y.style.border = '2px solid red';
+
+//Создайте два input type=number, куда пользователь может ввести числа. Выведите на страницу сумму данных чисел
+
+let eightOne = document.querySelector(".eight-one"); //переменная для значения 1 value
+let eightTwo = document.querySelector(".eight-two"); //переменная для значения 1 value
+let eight = document.querySelector(".eight"); //переменная для кнопки
+let outEight = document.querySelector(".out-eight"); //переменная для строки вывода суммы
+
+eight.onclick = function(){
+  let one = +eightOne.value; //переменная для вводимого значения 1 value
+  let two = +eightTwo.value; //переменная для вводимого значения 2 value
+  outEight.innerHTML = (one + two); //сумма двух value
+  inputIn.value = ""; //очистить строку
+}
+
+//запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseInt(t), и результат операции выведите в консоль
+
+let inputNine = document.querySelector(".nine");
+let buttonNine = document.querySelector(".button-nine");
+
+buttonNine.onclick = function(){
+  t = inputNine.value;
+  t = parseInt(t);
+  console.log(parseInt(t));
+}
+
+//запускается по нажатию на кнопку. Получите значение из input в переменную t. А затем сделайте операцию t = parseFloat(t), и результат операции выведите в консоль. Прочитайте за эту операцию. Попробуйте по очереди вводить 44, 44aaa, 44.3, a45 
+
+let inputTen = document.querySelector(".ten");
+let buttonTen = document.querySelector(".button-ten");
+
+buttonTen.onclick = function(){
+  t = inputTen.value;
+  t = parseFloat(t);
+  console.log(parseFloat(t));
+}
+
+//Создайте два input type=number, куда пользователь может ввести отрицательные числа. Выведите на страницу сумму данных чисел
+
+let inputElevenOne = document.querySelector(".eleven-one");
+let inputElevenTwo = document.querySelector(".eleven-two");
+let buttonEleven = document.querySelector(".button-eleven");
+let outEleven = document.querySelector(".out-eleven");
+
+buttonEleven.onclick = function(){
+  let ElevenOne = +inputElevenOne.value;
+  let ElevenTwo = +inputElevenTwo.value;
+  outEleven.innerHTML = (ElevenOne + ElevenTwo);
+}
+
+//Создайте опросник, куда пользователь может ввести имя, фамилию, возраст, род занятий. И кнопку. По нажатию кнопки выведите на страницу предложение 'Уважаемый Иван, Иванов, ваш возраст 33 года, по професси вы ...' куда поставьте соответствующие данные из inputов.
+
+let inputName = document.querySelector(".name");
+let inputFirstname = document.querySelector(".firsname");
+let inputAge = document.querySelector(".age");
+let inputProfession = document.querySelector(".profession");
+let buttonName = document.querySelector(".button-name");
+let outName = document.querySelector(".out-name");
+
+buttonName.onclick = function(){
+  let name = inputName.value;
+  let firstname = inputFirstname.value;
+  let age = inputAge.value;
+  let proffesion = inputProfession.value;
+  outName.innerHTML = ("Уважаемый"+ " " + name + " " + firstname + " " + "Ваш возраст" + " " + age + " " + "года" + " " + "по профессии Вы" + " " + proffesion);
+}
