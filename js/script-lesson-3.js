@@ -1,3 +1,7 @@
+//document.querySelector("body").innerHTML = ' ';
+
+
+
 /*let a = 19;
 
 // >= проверка на меньше 
@@ -144,10 +148,125 @@ let out6 = document.querySelector(".out-6");
 b6.onclick = () => {
   let f6 = +i6.value % 2;
   if (f6 == 0) {
-    console.log("odd");
+    out6.innerHTML = "odd";
   }
   if (f6 != 0) {
-    console.log("even");
+    out6.innerHTML = "even";
   }
 }
 
+//Даны 2 input - i-71 и i-72, оба - input[type=number]. При нажатии кнопки b-7 срабатывает функция f7. Функция должна число из i-71 возвести в степень i-72, вывести результат в out-7. Для возведения в степень можно использовать **, или Math.pow.
+
+let b7 = document.querySelector(".b-7");
+let i71 = document.querySelector(".i-71");
+let i72 = document.querySelector(".i-72");
+let out7 = document.querySelector(".out-7");
+
+b7.onclick = () => {
+  let f71 = +i71.value;
+  let f72 = +i72.value;
+  out7.innerHTML = Math.pow(f71, f72);
+}
+
+//Дан select s-8, который содержит 3 значения: 1, 2, 3. Дана кнопка b-8. При ее нажатии срабатывает функция f8. Функция должна получить выбранное в select число, потом с помощью switch case сравнить его поочередно с ‘1’, ‘2’, ‘3’. И если число выбрано - 1, то вывести в out-8 строку one, если 2 - two, если 3 - three.
+
+let b8 = document.querySelector(".b-8");
+let s8 = document.querySelector(".s-8");
+let out8 = document.querySelector(".out-8");
+
+b8.onclick = () => {
+ let f8 = +s8.value;
+ switch (f8) {
+  case 1:
+    out8.innerHTML = "one";
+    break
+  case 2:
+    out8.innerHTML = "two";
+    break
+  case 2:
+    out8.innerHTML = "three";
+    break
+}
+  let plus = "+";
+  let minus = "-";
+  let umn = "*";
+  let del = "/";
+//Создайте на странице input[type=number] с классом i-9, куда пользователь может ввести номер квартиры. Есть кнопка b-9 которая запускает функцию f9. Функция должна вывести в .out-9 номер подъезда, в котором находится квартира.
+
+let i9 = document.querySelector(".i-9");
+let b9 = document.querySelector(".b-9");
+let out9 = document.querySelector(".out-9");
+
+b9.onclick = () => {
+  let f9 = +i9.value;
+  if (f9 >= 1 && f9 < 32)
+  out9.innerHTML = "1 подъезд";
+  else if (f9 >= 33 && f9 < 43)
+  out9.innerHTML = "2 подъезд";
+  else if (f9 >= 44 && f9 < 64)
+  out9.innerHTML = "3 подъезд";
+  else if (0 > f9 || f9 > 64)
+  out9.innerHTML = "нет такой квартиры!";
+}
+
+let i10 = document.querySelector(".s-100");
+let b10 = document.querySelector(".b-10");
+let out10 = document.querySelector(".out-10");
+
+b10.onclick = () => {
+  let f10 = +i10.value;
+  out10.innerHTML = f10;
+}
+
+//Дан select s-110. По изменению состояния select (событие onchange) выведите value выбранного option в out-11.
+
+let s110 = document.querySelector(".s-110");
+let out11 = document.querySelector(".out-11");
+
+s110.onclick = () => {
+  let f110 = s110.value;
+  out11.innerHTML = f110;
+}
+
+//Дан input i-120. По нажатию кнопки получите значение из input в переменную, а затем выведите в out-12 typeof полученной переменной. Typeof позволяет определить тип данных. Обратите внимание, данная задача уже решена, нужно убрать комментарии и изучить работу.
+
+let i120 = document.querySelector(".i-120");
+let b12 = document.querySelector(".b-12");
+let out12 = document.querySelector(".out-12");
+
+b12.onclick = () => {
+  let f120 = i120.value;
+  out12.innerHTML = typeof f120;
+}
+
+//Дан input i-130. В отличие от предыдущего задания - input type number. По нажатию кнопки получите значение из input в переменную, а затем выведите в out-13 typeof полученной переменной. Typeof позволяет определить тип данных. Если вы правильно все сделали - то удивительно, но тип данных будет string! Подумайте почему так?
+
+let i130 = document.querySelector(".i-130");
+let b13 = document.querySelector(".b-13");
+let out13 = document.querySelector(".out-13");
+
+b13.onclick = () => {
+  let f130 = i130.value;
+  out13.innerHTML = typeof f130;
+}
+//Дан input i-141 и input-142, type=number. Дан select s-143, который содержит две операции - +, -, *, / . Дана кнопка b-14, при нажатии на которую срабатывает функция f14. Функция выводит в out-14 результат операций выбранной в 3-м select к числам введенным в первом и втором input. Например выбрано 1 13 +, нужно вывести результат операции 1+13 т.е. 14.
+
+function f14(){
+    let a = +document.querySelector('.i-141').value;
+    let b = +document.querySelector('.i-142').value;
+    let v = document.querySelector('.s-143').value;
+    let out = document.querySelector('.out-14');
+    switch (v) {
+      case '+': out.innerHTML = a + b
+          break;
+      case '-': out.innerHTML = a - b
+          break;
+      case '*': out.innerHTML = a * b
+          break;
+      case '/': out.innerHTML = a / b
+          break;
+    }
+  }
+
+  document.querySelector('.b-14').onclick = f14;
+}

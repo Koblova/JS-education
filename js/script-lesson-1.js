@@ -74,4 +74,6 @@ console.log(divS3);
 divS3 = document.querySelector("div.s4");
 console.log(divS3);
 
-//document.querySelector("body").innerHTML = ' ';
+
+
+
