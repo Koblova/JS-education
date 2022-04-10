@@ -110,4 +110,28 @@ b5.onclick = () => {
   out5.innerHTML += i
 }
 
+// Кнопка b-6 запускает функцию t6. Функция должна выводить в out-6 строку вида:
+// ******
+// ******
+// ******
 
+
+let out6 = document.querySelector(".out-6");
+let b6 = document.querySelector(".b-6");
+
+
+b6.onclick = () => {
+  let n = document.querySelector(".i-6").value;
+  let i = 0;
+  let out = '';
+  while (i < n) {
+    let k = 0;
+    while (k < 6) {
+      out += `*`;
+      k++;
+    }
+    out += `<br>`;
+    i++;
+  }
+  out6.innerHTML = out;
+}
