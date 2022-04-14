@@ -195,3 +195,122 @@ function f8() {
 }
 
 b8.onclick = f8
+
+// Есть input i-91 и i-92 куда пользователь может ввести числа. По нажатию кнопки b-9 должна запускаться функция f9, которая выводит в out-9 числа от меньшего введенного до большего включительно, с шагом 1. Разделитель пробел. Если пользователь ввел 4 и 8 и нажал кнопку, мы получим:
+// 4 5 6 7 8
+// если ввел 8 и 6, то получим
+// 6 7 8
+// Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл while.
+
+let i91 = document.querySelector(".i-91")
+let i92 = document.querySelector(".i-92")
+let out9 = document.querySelector(".out-9")
+let b9 = document.querySelector(".b-9")
+
+function f9() {
+  k = i91.value
+  i = i92.value
+  if (k > i) {
+    while (k >= i) {
+    out9.innerHTML += i + " "
+    i++
+  }
+}
+  if (k < i)  {
+  while (k <= i) {
+      out9.innerHTML += k + " "
+      k++
+  }
+  }
+}
+
+b9.onclick = f9
+
+// Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно. Разделитель - пробел. Задача решается через цикл while, а четность - через шаг (равный 2).
+
+let out10 = document.querySelector(".out-10")
+let b10 = document.querySelector(".b-10")
+
+function t10() {
+let k = 1950
+let i = 2000
+
+  while (k <= i) {
+    out10.innerHTML += k + " "
+    k = k + 2
+  }
+}
+
+b10.onclick = t10
+
+// Кнопка b-11 запускает функцию t11. Функция должна: получить все div.div-11 перебрать их с помощью цикла while. Обращение к div выглядит так elem[i] вывести в out-11 содержимое каждого блока. Разделитель - пробел. В результате должно получиться так:
+// one 3 4 two
+
+function t11() {
+  let out11 = document.querySelector('.out-11');
+  let divs11 = document.querySelectorAll('.div-11');
+  let out = '';
+  for (let i = 0; i < divs11.length; i++){
+    out += divs11[i].innerHTML + ' ';
+  }
+  out11.innerHTML = out;
+}
+
+document.querySelector('.b-11').onclick = t11;
+
+//Кнопка b-12 запускает функцию t12. Функция должна: получить все div.div-12 перебрать их с помощью цикла while. Обращение к div выглядит так elem[i] применить к каждому elem[i].style.background = ‘orange’
+
+function t12() {
+
+  let elem = document.querySelectorAll('.div-12');
+  for (let i = 0; i < elem.length; i = i + 1){
+    elem[i].style.background = "orange"
+  }
+  
+}
+
+document.querySelector('.b-12').onclick = t12;
+
+// Кнопка b-13 запускает функцию t13. Функция должна: получить все input.i-13 перебрать их с помощью цикла while. Обращение к элементу выглядит так elem[i] применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
+
+function t13() {
+
+let inp = document.querySelectorAll('.i-13');
+for (let i = 0; i < inp.length; i++) {
+  inp[i].value = i + 1
+ }
+}
+
+document.querySelector('.b-13').onclick = t13;
+
+//Кнопка b-14 запускает функцию t14 Функция должна: получить все input.i-14 перебрать их с помощью цикла while. Обращение к элементу выглядит так elem[i] вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
+
+function t14() {
+  let out14 = document.querySelector('.out-14');
+  let inp = document.querySelectorAll('.i-14');
+  let i = 0
+  while (inp.length > i) {
+    if (inp[i].checked) {
+      out14.innerHTML += inp[i].value
+    }
+    i++
+   }
+  }
+  
+  document.querySelector('.b-14').onclick = t14;
+
+  // Кнопка b-15 запускает функцию t15 Функция должна выводить следующую последовательность в out-15:
+  // 10 0 9 1 8 2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10
+
+
+  function t15() {
+    let out15 = document.querySelector('.out-15');
+
+    for (let i = 0, j = 10; i <= 10; i++, j--)  {
+      out15.innerHTML += j + " "
+      out15.innerHTML += i + " "
+
+     }
+    }
+    
+    document.querySelector('.b-15').onclick = t15;
