@@ -5,3 +5,20 @@
 div {
   margin-bottom: 30px;
 }
+
+.one {
+  background: rgb(254, 183, 249);
+}
+
+.two {
+  background: rgb(195, 254, 183);
+}
+
+.three {
+  border: 2px solid red;
+}
+
+button {
+  background: rgb(255, 143, 233);
+  border-radius: 3px;
+}
