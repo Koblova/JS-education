@@ -145,3 +145,140 @@ function f10() {
 }
 
 f10 ()
+
+//Добавьте кнопку .b-11, которая запускает функцию f11. Функция создает через createElement div c текстом 25 и добавляет его через append в out-11.
+
+
+
+function f11() {
+  let out11 = document.querySelector(".out-11");
+  let b = document.createElement("div");
+  b.innerHTML = '25';
+  out11.append(b);
+}
+
+document.querySelector(".b-11").onclick = f11
+
+// Добавьте кнопку .b-12, которая запускает функцию f12. Функция создает через createElement div c текстом 12 и добавляет ему класс bg-12. Созданный div добавляется в out-12.
+
+function f12() {
+  let out12 = document.querySelector(".out-12");
+  let b = document.createElement("div");
+  b.innerHTML = '12';
+  b.classList.add("bg-12");
+  out12.append(b);
+}
+
+document.querySelector(".b-12").onclick = f12
+
+// Добавьте кнопку .b-13, которая запускает функцию f13. Функция создает через createElement div c текстом pushMe и добавляет ему класс bg-13. Также, созданному div добавляется событие onclick, по которому выполняется функция f13_1. Созданный div добавляется в out-13.
+
+function f13() {
+  let div13 = document.querySelector('div');
+  div13.onclick = f13_1;
+  div13.innerHTML = 'pushME';
+  div13.classList.add('bg-orange');
+  document.querySelector('.out-13').append(div13);
+}
+
+function f13_1() {
+  document.querySelector('.out-13-1').innerHTML += this.innerHTML;
+}
+
+document.querySelector('.b-13').onclick = f13;
+
+
+// Добавьте кнопку .b-14, которая запускает функцию f14. Функция создает через createElement div c текстом 14 и добавляет ему класс bg-14. Созданный div добавляется в out-14 с помощью prepend.
+
+function f14() {
+  let out14 = document.querySelector(".out-14");
+  let b = document.createElement("div");
+  b.innerHTML = '14';
+  b.classList.add("bg-14");
+  out14.prepend(b);
+}
+
+document.querySelector(".b-14").onclick = f14
+
+// Добавьте кнопку .b-15, которая запускает функцию f15. Функция создает через createElement div c текстом 15 и добавляет ему класс bg-15. Созданный div добавляется в out-15 с помощью before.
+
+function f15() {
+  let out15 = document.querySelector(".out-15");
+  let b = document.createElement("div");
+  b.innerHTML = '15';
+  b.classList.add("bg-15");
+  out15.before(b);
+}
+
+document.querySelector(".b-15").onclick = f15
+
+//Добавьте кнопку .b-16, которая запускает функцию f16. Функция создает через createElement div c текстом 16 и добавляет ему класс bg-16. Созданный div добавляется в out-16 с помощью after.
+
+function f16() {
+  let out16 = document.querySelector(".out-16");
+  let b = document.createElement("div");
+  b.innerHTML = '16';
+  b.classList.add("bg-16");
+  out16.after(b);
+}
+
+document.querySelector(".b-16").onclick = f16
+
+//Добавьте кнопку .b-17, которая запускает функцию f17. Функция создает через createElement div c текстом 17 и добавляет ему класс bg-17. Созданный div заменяет out-17 с помощью replaceWith.
+
+
+function f17() {
+  let out17 = document.querySelector(".out-17");
+  let b = document.createElement("div");
+  b.innerHTML = '17';
+  b.classList.add("bg-17");
+  out17.replaceWith(b);
+}
+
+document.querySelector(".b-17").onclick = f17
+
+
+//append - добавляет элемент (указанный в скобках) со значением и выводит в иннер
+//prepend - добавляет вложенный элемент с новым классом
+//before - добавляет элемент перед указанным
+//after - добавляет элемент после указанного
+//replaceWith - выводит значение указанного в скобках элемента
+
+
+// Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
+
+let out18 = document.querySelector(".out-18");
+let p18 = document.querySelector(".p-18");
+
+function f18() {
+  let par18 = p18.getAttribute("data-b");
+  out18.innerHTML = par18;
+}
+
+document.querySelector(".b-18").onclick = f18
+
+// Добавьте кнопку .b-19, которая запускает функцию f19. Функция с помощью getAttribute получает data-b атрибут с параграфов p-19 и выводит в out-19 через пробел. Обратите внимание, что элементов p-19 больше одного.
+
+// function f19() {
+//   let out19 = document.querySelector('.out-19')
+//   let p19 = document.querySelectorAll('.p-19');
+
+//   for (i = 0; i < p19.length; i++) {
+//     out19 += p19[i].getAttribute('date-c') + ' ';
+//   }
+//   out19.innerHTML = out19
+// }
+
+// document.querySelector('.b-19').onclick = f19;
+
+out19 = document.querySelector('.out-19');
+p19 = document.querySelectorAll('.p-19');
+document.querySelector('.b-19').onclick = f19;
+
+
+function f19() {
+    for (let i = 0; i <= p19.length; i++) {
+        let data = p19[i].getAttribute('data-c');
+        out19.innerHTML += data + ' ';   
+    }    
+}
