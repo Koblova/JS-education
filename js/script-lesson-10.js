@@ -1,10 +1,10 @@
 // Task 1
 //Создайте массив ar1 содержащий строки, числа, булевы значения. Выведите его в .out-1. Вывод - по нажатию кнопки b-1
 
-// let ar1 = // переменную обьявляем здесь!!!!
+let ar1 = ["hello", 777, true];
 
 function f1() {
-  let ar1 = ["hello", 777, true];
+
   let out1 = document.querySelector(".out-1");
   out1.innerHTML = ar1;
 }
@@ -19,7 +19,7 @@ let ar2 = ["hello", 777, true];// переменную обьявляем зде
 function f2() {
   let out = '';
   for (let i = 0; i < ar2.length; i++) {
-      out += ar2[i]+' ';
+      out += ar2[i] + ' ';
    }
    document.querySelector('.out-2').innerHTML = out;
 }
@@ -302,22 +302,33 @@ document.querySelector('.b-16').onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
-
+  let count = 0;
+  for (let i = 0; i < ar17.length; i++) {
+    if (ar17[i] > 3) {
+      count++;
+    }
+  }
+  document.querySelector('.out-17').innerHTML = count;
 }
+
 
 document.querySelector('.b-17').onclick = f17;
 
 
 // Task 18
 // Используя цикл выведите в .out-18 максимальный элемент массива ar18.
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-18
-// Вывод в out-18
 
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 
 function f18() {
 
+  let max = ar18[0]
+  for (let i = 0; i < ar18.length; i++) {
+    if (ar18[i] > max) {
+      max = ar18[i];
+    }
+  }
+  document.querySelector('.out-18').innerHTML = max;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -325,28 +336,33 @@ document.querySelector('.b-18').onclick = f18;
 
 // Task 19
 // Выведите в .out-19 индекс минимального элемента в массиве ar19
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-19
-// Вывод в out-19
 
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 
 function f19() {
-
+  let min = ar19[0];
+  for (let i = 0; i < ar19.length; i++) {
+    if (ar19[i] < min) {
+      min = ar19[i];
+    }
+  }
+  document.querySelector('.out-19').innerHTML = min;
 }
 
 document.querySelector('.b-19').onclick = f19;
 
 // Task 20
 // Выведите в .out-20 сумму элементов в массиве ar20
-// Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
-// Вывод - по нажатию кнопки b-20
-// Вывод в out-20
+
 
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
-
+  let sum = 0;
+  for (let i = 0; i < ar20.length; i++) {
+    sum = sum + ar20[i];
+  }
+  document.querySelector('.out-20').innerHTML = sum;
 }
 
 document.querySelector('.b-20').onclick = f20;
